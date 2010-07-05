@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html tal="http://xml.zope.org/namespaces/tal"
+      metal="http://xml.zope.org/namespaces/metal"
+      i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="ravel"
+      metal:use-macro="api.macros['master']"
+      lang="en">
+<head>
+  <title>${title}</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<body>
+  <tal:block metal:fill-slot="content">
+    <h1>
+      ravel place holder for initial rendering
+    </h1>
+
+    <p>
+      Ravel is a demo app
+    </p>
+
+    <p>
+      Ravel, fun for the whole fmaily.
+    </p>
+   
+
+  </tal:block>
+  <tal:block metal:fill-slot="rail">
+    <p> Here is the rail</p>
+    <p> Here is the rail</p>
+    <p> Here is the rail</p>
+  </tal:block>
+  
+</body>
+</html>

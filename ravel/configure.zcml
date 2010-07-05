@@ -1,0 +1,49 @@
+<configure xmlns="http://namespaces.repoze.org/bfg">
+
+  <!-- this must be included for the view declarations to work -->
+  <include package="repoze.bfg.includes" />
+
+  <static
+      name="static"
+      path="templates/static"
+      />
+
+  <static
+      name="deform_static"
+      path="deform:static"
+      />
+
+  <route
+     name="home"
+     path=""
+     renderer="templates/index.pt"
+     view=".views.main_view.index"
+     />
+  <!-- <route -->
+  <!--     name="login" -->
+  <!--     path="login" -->
+  <!--     renderer="templates/login.pt" -->
+  <!--     view=".views.login.login" -->
+  <!--     /> -->
+
+  <!-- <route -->
+  <!--     name="logout" -->
+  <!--     path="logout" -->
+  <!--     view=".views.login.logout" -->
+  <!--     /> -->
+
+
+  <!-- <forbidden -->
+  <!--     renderer="templates/login.pt" -->
+  <!--     view=".views.login.login" -->
+  <!--     /> -->
+
+  <!-- <authtktauthenticationpolicy -->
+  <!--     callback=".security.groupfinder" -->
+  <!--     secret="secret="WiL0TK9P760LvgpPnv9lqNvqFvIiXz51Iiaol3eEBB5v" -->
+  <!--     /> -->
+  
+  <!-- <aclauthorizationpolicy /> -->
+ 
+
+</configure>
