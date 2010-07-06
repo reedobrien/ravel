@@ -47,6 +47,13 @@
      />
 
   <route
+      name="articles_listing"
+      path="articles"
+      renderer="templates/articles.pt"
+      view=".views.main_view.article_listing"
+      />
+
+  <route
       name="login"
       path="login"
       renderer="templates/login.pt"

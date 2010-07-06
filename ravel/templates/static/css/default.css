@@ -253,6 +253,14 @@ article ul li {
     margin: 2em;
 }
 
+section#listing {
+    margin: auto;
+}
+
+section#listing ul {
+    padding: 3em;
+}
+
 /* #content p { */
 /*     margin: 0 1em 1em 1em; */
 /* } */

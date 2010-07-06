@@ -20,11 +20,19 @@
     </tal:block>
 
     <tal:block metal:fill-slot="content">
-      <h1>The ${path} page is not yet implemented</h1>
-
-      <article>
-	<p>Hahahaha, like I really got around to this already</p>
-      </article>
+      <h1>Article Listing</h1>
+      <section id="listing">
+	<ul>
+	  <li tal:repeat="article articles">
+	    <strong>
+	    <a tal:attributes="href string:${request.application_url}/page/${article.url_id};
+			       title string:${article.description}">
+	      ${article.title}
+	    </a> - ${article.description}
+	    </strong>
+	  </li>
+	</ul>
+      </section>
     </tal:block>
 
   </body>

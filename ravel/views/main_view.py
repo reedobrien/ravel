@@ -1,8 +1,9 @@
+from urlparse import parse_qs
 from repoze.bfg.chameleon_zpt import get_template
 from repoze.bfg.security import authenticated_userid
 from repoze.bfg.url import route_url
 
-from lumin import insert_doc
+
 
 def index(request):
     api = get_template("ravel:templates/main.pt")
@@ -65,6 +66,22 @@ def about(request):
 
         }
 
+def article_listing(request):
+    api = get_template('ravel:templates/main.pt')
+    query_string = parse_qs(request.get("QUERY_STRING", None))
+    batch_start = query_string.get('batch_start', 0)
+    limit = query_string.get('limit', 10)
+    collection = request.context.db.pages
+    articles = collection.find().skip(int(batch_start)).limit(int(limit))
+    return {
+        'api' : api,
+        'title' : "Article Listing",
+        'description' : "A listing of articles",
+        'logged_in' : authenticated_userid(request),
+        'section' : 'articles',
+        'articles' : articles,
+        }
+
 def not_implemented(request):
     api = get_template('ravel:templates/main.pt')
     path = request.get('PATH_INFO').strip('/')
@@ -76,3 +93,5 @@ def not_implemented(request):
         'path': path,
         'title':'Not Implemented',
         }
+
+
