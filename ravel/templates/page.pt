@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html tal="http://xml.zope.org/namespaces/tal"
+      metal="http://xml.zope.org/namespaces/metal"
+      i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="partfiniti"
+      metal:use-macro="api.macros['master']"
+      >
+  <head>
+    <title>${title}</title>
+  </head>
+  <body>
+    <!-- navigation-tabs slot is a nav element -->
+    <tal:block metal:fill-slot="navigation-tabs">
+	<ul id="part-tabs">
+	  <li><a id="t1" href="${request.application_url}/">Home</a></li>
+	  <li><a id="t1" href="${request.application_url}/about">About</a></li>
+	  <li><a id="t3" href="${request.application_url}/articles">Articles</a></li>
+	  <!-- <li><a id="t4" href="contact">Contact</a></li> -->
+	  <!-- <li><a id="t5" href="events">Events</a></li> -->
+	  <!-- <li><a id="t6" href="news">News</a></li> -->
+	</ul>
+    </tal:block>
+    <tal:block metal:fill-slot="content">
+      <nav tal:contition="logged_in"
+	   class="actions">
+	<a href="${edit_url}" title="Edit Part">Edit Page</a>
+      </nav>
+	<article>
+	  <h1>${title}</h1>
+	  <p id="body" tal:content="structure body" />
+      </article>
+    </tal:block>
+
+  </body>
+</html>

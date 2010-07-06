@@ -16,7 +16,8 @@
   <route
      name="home"
      path=""
-     renderer="templates/index.pt"
+     factory=".models.page.Page"
+     renderer="templates/page.pt"
      view=".views.main_view.index"
      />
 
@@ -33,6 +34,32 @@
       view=".views.login.logout"
       />
 
+  <route
+      factory=".models.page.Page"
+      name="page_add"
+      path="page/add"
+      permission="add"
+      view=".views.page.page_add"
+      view_renderer="templates/generic_edit.pt"
+      />
+
+  <route
+      factory=".models.page.Page"
+      name="page_view"
+      path="page/:page_id"
+      permission="view"
+      view=".views.page.page_view"
+      view_renderer="templates/page.pt"
+      />
+
+  <route
+      factory=".models.page.Page"
+      name="page_edit"
+      path="page/:page_id/edit"
+      permission="edit"
+      view=".views.page.page_edit"
+      view_renderer="templates/generic_edit.pt"
+      />
 
   <forbidden
       renderer="templates/login.pt"
