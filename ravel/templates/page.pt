@@ -30,6 +30,11 @@
 	  <p tal:replace="structure body" />
       </article>
     </tal:block>
+  <tal:block metal:fill-slot="rail">
+    <p>Nobody here but us fish</p>
+    <p>Glug</p>
+    <p>Glug</p>
+  </tal:block>
 
   </body>
 </html>
