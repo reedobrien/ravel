@@ -38,16 +38,16 @@ I will elicit the steps performed by me:
 
 1. Setup a `virtualenv <http://pypi.python.org/pypi/virtualenv>`_ and activate it (activation azzumes you are using bash or a bash compatible shell)
 
-  ``/usr/local/python/2.7.0/bin/virtualenv /usr/local/dev/zpug_demo_env --no-site-packages --distribute``
-  ``. /usr/local/dev/zpug_demo_env/bin/activate``
+  ``$ /usr/local/python/2.7.0/bin/virtualenv /usr/local/dev/zpug_demo_env --no-site-packages --distribute``
+  ``$ . /usr/local/dev/zpug_demo_env/bin/activate``
 
 2. Make development eggs for the src you have checked out
 
-  ``for dir in peppercorn colander deform mongo-python-driver repoze.bfg lumin ravel; do cd ../$dir && /usr/local/dev/zpug_demo_env/bin/python setup.py develop; done``
+  ``$ for dir in peppercorn colander deform mongo-python-driver repoze.bfg lumin ravel; do cd ../$dir && /usr/local/dev/zpug_demo_env/bin/python setup.py develop; done``
 
 3. See if it runs
 
-  ``python``
+  ``$ paster serve ravel.ini``
 
 
 You call this documentation?
