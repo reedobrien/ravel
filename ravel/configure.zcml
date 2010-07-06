@@ -13,6 +13,23 @@
       path="deform:static"
       />
 
+  <!-- Not implemented stuff -->
+
+  <route
+     name="search"
+     path="search"
+     view=".views.main_view.not_implemented"
+     view_renderer="templates/not_implemented.pt"
+     />
+
+  <route
+     name="announcement_add"
+     path="announcement/add"
+     view=".views.main_view.not_implemented"
+     view_renderer="templates/not_implemented.pt"
+     />
+
+
   <route
      name="home"
      path=""

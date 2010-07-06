@@ -3,13 +3,11 @@
       metal="http://xml.zope.org/namespaces/metal"
       i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="partfiniti"
-      metal:use-macro="api.macros['master']"
-      >
+      metal:use-macro="api.macros['master']">
   <head>
     <title>${title}</title>
   </head>
   <body>
-    <!-- navigation-tabs slot is a nav element -->
     <tal:block metal:fill-slot="navigation-tabs">
 	<ul id="part-tabs">
 	  <li><a id="t1" href="${request.application_url}/">Home</a></li>
@@ -20,21 +18,10 @@
 	  <!-- <li><a id="t6" href="news">News</a></li> -->
 	</ul>
     </tal:block>
+
     <tal:block metal:fill-slot="content">
-      <nav tal:condition="logged_in"
-	   class="actions">
-	<a href="${edit_url}" title="Edit Part">Edit Page</a>
-      </nav>
-	<article>
-	  <h1>${title}</h1>
-	  <p tal:replace="structure body" />
-      </article>
+      <h1>The ${path} page is not yet implemented</h1>
     </tal:block>
-  <tal:block metal:fill-slot="rail">
-    <p>Nobody here but us fish</p>
-    <p>Glug</p>
-    <p>Glug</p>
-  </tal:block>
 
   </body>
 </html>
