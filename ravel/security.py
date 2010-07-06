@@ -1,15 +1,21 @@
 ## for security stuff
-import pymongo
 
-from repoze.bfg.settings import get_settings
+#needs a user in the db like so
+"""
+user = {'username': 'admin', 
+        'last_login': [], 
+        'groups': ['group:editors', 'group:admins'], 
+        'password': '58acb7acccce58ffa8b953b12b5a7702bd42dae441c1ad85057fa70b', 
+        'email': 'info@koansys.com'}
+"""
+
+
 
 def groupfinder(userid, request):
-    settings = get_settings()
-    db = pymongo.Connection.from_uri(
-        uri=settings['db_uri'])[settings['db_name']]
-    user = None
-    user = db['users'].find({'username' : userid}).next()
-    print user
+    try:
+        user = request.root.db['users'].find({'username' : userid}).next()
+    except StopIteration:
+        user = None
     if user:
         return user['groups']
     

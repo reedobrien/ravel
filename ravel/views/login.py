@@ -1,8 +1,10 @@
+from datetime import datetime
 from hashlib import sha224
 
 from webob.exc import HTTPFound
 
 from repoze.bfg.chameleon_zpt import get_template
+from repoze.bfg.security import authenticated_userid
 from repoze.bfg.security import remember
 from repoze.bfg.security import forget
 from repoze.bfg.url import route_url
@@ -26,6 +28,9 @@ def login(request):
         if user:
             if sha224(password).hexdigest() == user['password']:
                 headers = remember(request, login)
+                
+                request.root.db.users.update({"_id" : user['_id']}, 
+                                             {"$set" : {'last_login' : datetime.now() }})
                 return HTTPFound(location=came_from,
                                  headers=headers)
         message = 'Login failed'
@@ -33,6 +38,7 @@ def login(request):
         api = api,
         came_from = came_from,
         login = login,
+        logged_in = authenticated_userid(request),
         message = message,
         password = password,
         section = 'login',
