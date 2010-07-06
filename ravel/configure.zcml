@@ -22,6 +22,14 @@
      />
 
   <route
+     name="about"
+     path="about"
+     factory=".models.page.Page"
+     renderer="templates/page.pt"
+     view=".views.main_view.about"
+     />
+
+  <route
       name="login"
       path="login"
       renderer="templates/login.pt"

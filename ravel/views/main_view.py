@@ -13,7 +13,6 @@ def index(request):
         title = page['title']
         description = page['description']
         body = page['body']
-        route_url('page_edit', request, page_id="home"),
     else:
         page = dict(
             title = 'Home',
@@ -31,10 +30,40 @@ def index(request):
         'description': description,
         'edit_url' :  route_url('page_edit', request, page_id="home"),
         'logged_in' : logged_in,
+        'section' : 'home',
+        'title': title,
+        }
+
+def about(request):
+    api = get_template("ravel:templates/main.pt")
+    collection =  request.context.collection 
+    page = collection.find_one({'url_id' : 'about'})
+    logged_in = authenticated_userid(request)
+    if page:
+        title = page['title']
+        description = page['description']
+        body = page['body']
+    else:
+        page = dict(
+            title = 'About ravel',
+            description = "A zpug demo presentation app",
+            body = '<p>Just a buggy demo hack</p>',
+            url_id = 'about')
+        collection.save(page)
+        title = page['title']
+        description = page['description']
+        body = page['body']
+        
+    return {
+        'api' : api,
+        'body' : body,
+        'description': description,
+        'edit_url' :  route_url('page_edit', request, page_id="home"),
+        'logged_in' : logged_in,
+        'section' : 'about',
         'title': title,
 
         }
-
 
 def not_implemented(request):
     api = get_template('ravel:templates/main.pt')
