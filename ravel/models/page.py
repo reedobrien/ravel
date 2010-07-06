@@ -22,10 +22,10 @@ class PageSchema(colander.MappingSchema):
     description  = SchemaNode(String(),
                               title='A short description', 
                               description='Keep it under 60 characters or so',
-                              missing = u''
+                              missing = u'',
+                              validator=colander.Length(max=79)
                               )
     body = colander.SchemaNode(colander.String(),
-                               validator=colander.Length(max=100),
                                description='Tell the world',
                                missing = u'')
 
