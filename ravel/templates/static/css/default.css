@@ -148,3 +148,29 @@ footer p {
     text-align: center;
     padding: 1em 0;
 }
+
+
+#login-wrapper {
+    width: 220px;
+    margin: auto;
+    padding: 1em;
+    background-color: rgb(148, 189, 93);
+    background-color: rgba(148, 189, 93,0.3);
+    background: -moz-linear-gradient(100% 100% 90deg, #94bd5e, rgb(134,156,78)); 
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(rgb(134,156,78)), to(#94bd5e));  
+    -moz-box-shadow: -7px 7px 10px #470d06;
+    -webkit-box-shadow: -3px 5px 5px #470d06;  
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+#login-wrapper h2 {
+    text-align: center;
+    margin: 0 1em 0 0;
+    border: 1px solid rgb(140, 80, 41);
+    border: 1px solid rgba(140, 80, 41, .05);
+}
+
+#login-wrapper form, #login-wrapper .message {
+    padding-left: 2em;
+}

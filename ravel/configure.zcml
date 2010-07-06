@@ -19,31 +19,32 @@
      renderer="templates/index.pt"
      view=".views.main_view.index"
      />
-  <!-- <route -->
-  <!--     name="login" -->
-  <!--     path="login" -->
-  <!--     renderer="templates/login.pt" -->
-  <!--     view=".views.login.login" -->
-  <!--     /> -->
 
-  <!-- <route -->
-  <!--     name="logout" -->
-  <!--     path="logout" -->
-  <!--     view=".views.login.logout" -->
-  <!--     /> -->
+  <route
+      name="login"
+      path="login"
+      renderer="templates/login.pt"
+      view=".views.login.login"
+      />
+
+  <route
+      name="logout"
+      path="logout"
+      view=".views.login.logout"
+      />
 
 
-  <!-- <forbidden -->
-  <!--     renderer="templates/login.pt" -->
-  <!--     view=".views.login.login" -->
-  <!--     /> -->
+  <forbidden
+      renderer="templates/login.pt"
+      view=".views.login.login"
+      />
 
-  <!-- <authtktauthenticationpolicy -->
-  <!--     callback=".security.groupfinder" -->
-  <!--     secret="secret="WiL0TK9P760LvgpPnv9lqNvqFvIiXz51Iiaol3eEBB5v" -->
-  <!--     /> -->
+  <authtktauthenticationpolicy
+      callback=".security.groupfinder"
+      secret="WiL0TK9P760LvgpPnv9lqNvqFvIiXz51Iiaol3eEBB5v"
+      />
   
-  <!-- <aclauthorizationpolicy /> -->
+  <aclauthorizationpolicy />
  
 
 </configure>

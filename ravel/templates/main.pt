@@ -59,10 +59,10 @@
       <nav tal:condition="request.context.logged_in">
 	<a href="${request.application_url}/search"  
 	   title="Search by part number">search</a>
-	<a href="${request.application_url}/part/add"  
+	<a href="${request.application_url}/page/add"  
 	   title="Add a page">add page</a>
-	<a href="${request.application_url}/manufacturer/add"  
-	   title="Add a news item">add news item</a>
+	<a href="${request.application_url}/announcement/add"  
+	   title="Add a news item">add announcement</a>
 	<a href="${request.application_url}/logout"
 	   title="Log out">Log out</a>
       </nav>
