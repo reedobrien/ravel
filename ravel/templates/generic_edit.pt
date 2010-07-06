@@ -25,9 +25,22 @@
 
       <h1>$description</h1>
 
-      <form action="" method="POST">
+      <tal:block action="" method="POST">
 	<div tal:content="structure form">FORM STRUCTURE</div>
-      </form>
+      </tal:block>
+      <script type="text/javascript" src="${request.application_url}/static/js/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+      <script type="text/javascript">
+	tinyMCE.init({
+	mode : "textareas",
+	theme : "simple"
+	});
+	 //$(function() {
+	    // $('textarea').tinymce({
+	    // script_url : '${request.application_url}/static/js/tinymce/jscripts/tiny_mce/tiny_mce.js',
+	    // mode : 'textareas',
+	    // theme: 'simple',
+	    //  });
+      </script>
 
     </tal:block>
 
