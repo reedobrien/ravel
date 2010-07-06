@@ -38,6 +38,7 @@ def page_add(request):
     api = get_template('ravel:templates/main.pt')
     schema = request.context.schema
     form = Form(schema, buttons=('submit',))
+    form['body'].widget = widget.TextAreaWidget(rows=10, cols=60)
     if request.method == "POST":
         controls = request.POST.items()
         try:
@@ -74,6 +75,7 @@ def page_edit(request):
     api = get_template('ravel:templates/main.pt')
     schema = request.context.schema
     form = Form(schema, buttons=('submit',))
+    form['body'].widget = widget.TextAreaWidget(rows=10, cols=60)
     if request.method == "POST":
         controls = request.POST.items()
         try:
