@@ -27,7 +27,7 @@
       </nav>
 	<article>
 	  <h1>${title}</h1>
-	  <p id="body" tal:content="structure body" />
+	  <p tal:replace="structure body" />
       </article>
     </tal:block>
 
