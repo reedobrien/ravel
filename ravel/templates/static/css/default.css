@@ -6,8 +6,8 @@ ravel default CSS
 
 html {
     background: #94bd5e;
-    background: -moz-linear-gradient(100% 100% 90deg, #470d06, #94bd5e);
-    background: -webkit-gradient(linear, 0 0, 0 100%, from(#94bd5e), to(#470d06));
+    /* background: -moz-linear-gradient(100% 100% 90deg, #470d06, #94bd5e); */
+    /* background: -webkit-gradient(linear, 0 0, 0 100%, from(#94bd5e), to(#470d06)); */
     height: 100%;
 }
 
@@ -27,6 +27,7 @@ body {
     margin: auto;
     padding: 0em 0em;
     min-height: 100%;    /* always stretch to the footer */
+    position: relative;
 }
 
 #logo {
@@ -81,7 +82,7 @@ a img {
 
 #columnwrapper {
     width: 100%;
-    margin: 0em auto;
+    min-height: !important 100%;
     position: relative;
 }
 
@@ -252,6 +253,7 @@ footer{
     position: absolute;
     bottom: 0;
     width: 88%;
+    height: 60px;
 }
 
 footer p {
