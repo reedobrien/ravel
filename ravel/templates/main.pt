@@ -31,9 +31,9 @@
   <link rel="stylesheet" 
 	href="${request.application_url}/deform_static/css/form.css" 
 	type="text/css" />
-  <link rel="stylesheet" 
-	href="${request.application_url}/deform_static/css/theme.css" 
-	type="text/css" />
+  <!-- <link rel="stylesheet"  -->
+  <!-- 	href="${request.application_url}/deform_static/css/theme.css"  -->
+  <!-- 	type="text/css" /> -->
   <!-- ****** our ravel styles come last to override the blank space created by deform html{} css ***** -->
   <link href="${request.application_url}/static/css/default.css" 
 	rel="stylesheet" 
@@ -42,6 +42,7 @@
   <link rel="shortcut icon"
   	href="${request.application_url}/static/images/icon.png" />
   <script src="http://cdn.jquerytools.org/1.2.2/full/jquery.tools.min.js"></script>
+  <script type="text/javascript" src="${request.application_url}/static/js/tinymce/jscripts/tiny_mce/jquery.tinymce.js"></script>
   <!-- ******** our js *******  -->
   <script type="text/javascript" src="${request.application_url}/static/js/default.js"></script>
 </head>
