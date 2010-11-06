@@ -4,13 +4,6 @@ ravel default CSS
 
 @import url(http://fonts.googleapis.com/css?family=Molengo);
 
-html {
-    background: #94bd5e;
-    /* background: -moz-linear-gradient(100% 100% 90deg, #470d06, #94bd5e); */
-    /* background: -webkit-gradient(linear, 0 0, 0 100%, from(#94bd5e), to(#470d06)); */
-    height: 100%;
-}
-
 
 body {
     font-family: 'Molengo', arial, serif;
@@ -20,6 +13,7 @@ body {
     background: #94bd5e;
     background: -moz-linear-gradient(100% 100% 90deg, #470d06, #94bd5e);
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#94bd5e), to(#470d06));
+
 }
 
 #visual-wrapper {
@@ -28,6 +22,7 @@ body {
     padding: 0em 0em;
     min-height: 100%;    /* always stretch to the footer */
     position: relative;
+    overflow:auto;
 }
 
 #logo {

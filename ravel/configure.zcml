@@ -1,7 +1,7 @@
-<configure xmlns="http://namespaces.repoze.org/bfg">
+<configure xmlns="http://pylonshq.com/pyramid">
 
   <!-- this must be included for the view declarations to work -->
-  <include package="repoze.bfg.includes" />
+  <include package="pyramid.includes" />
 
   <static
       name="static"
@@ -53,6 +53,13 @@
       view=".views.main_view.article_listing"
       />
 
+  <route
+      name="comment_add"
+      factory=".models.page.Page"
+      path="page/:page_id/comment/add"
+      view=".views.comment.comment_add"
+      />
+      <!-- xhr="True" -->
   <route
       name="login"
       path="login"

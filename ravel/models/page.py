@@ -7,9 +7,9 @@ from colander import String
 
 from lumin import RootFactory
 
-from repoze.bfg.security import Allow
-from repoze.bfg.security import Everyone
-from repoze.bfg.exceptions import NotFound
+from pyramid.security import Allow
+from pyramid.security import Everyone
+from pyramid.exceptions import NotFound
 
 logging.basicConfig(level=logging.INFO)
 

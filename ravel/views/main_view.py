@@ -1,7 +1,7 @@
 from urlparse import parse_qs
-from repoze.bfg.chameleon_zpt import get_template
-from repoze.bfg.security import authenticated_userid
-from repoze.bfg.url import route_url
+from pyramid.chameleon_zpt import get_template
+from pyramid.security import authenticated_userid
+from pyramid.url import route_url
 
 
 
@@ -33,6 +33,8 @@ def index(request):
         'logged_in' : logged_in,
         'section' : 'home',
         'title': title,
+        'comments' : None,
+        'commentform' : None
         }
 
 def about(request):
@@ -63,7 +65,8 @@ def about(request):
         'logged_in' : logged_in,
         'section' : 'about',
         'title': title,
-
+        'comments' : None,
+        'commentform' : None
         }
 
 def article_listing(request):

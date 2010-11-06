@@ -29,12 +29,27 @@
 	  <h1>${title}</h1>
 	  <p tal:replace="structure body" />
       </article>
+      <section tal:condition="comments">
+	<dl>
+	  <tal:block tal:repeat="comment comments">
+	  <dt>
+	    ${comment.name}
+	  </dt>
+	  <dd>
+	    ${comment.comment}
+	  </dd>
+	  </tal:block>
+	  </dl>
+      </section>
+      <tal:block tal:condition="commentform">
+	<form tal:replace="structure commentform" />
+      </tal:block>
     </tal:block>
-  <tal:block metal:fill-slot="rail">
-    <p>Nobody here but us fish</p>
-    <p>Glug</p>
-    <p>Glug</p>
-  </tal:block>
 
+    <tal:block metal:fill-slot="rail">
+      <p>Nobody here but us fish</p>
+      <p>Glug</p>
+      <p>Glug</p>
+    </tal:block>
   </body>
 </html>
